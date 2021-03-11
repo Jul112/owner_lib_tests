@@ -1,0 +1,23 @@
+plugins {
+    id "java"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.aeonbits.owner:owner:1.0.12"
+
+    testImplementation (
+            "org.junit.jupiter:junit-jupiter-api:5.7.1",
+            "org.assertj:assertj-core:3.19.0", //https://mvnrepository.com/artifact/org.assertj/assertj-core
+            "com.codeborne:selenide:5.19.0"
+    )
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:5.7.1"
+}
+
+test {
+    useJUnitPlatform()
+    systemProperties(System.getProperties())
+}
